@@ -1,0 +1,69 @@
+
+** What is the difference between forEach and for...of? When would you use each?
+forEach:
+Runs a function on every element in an array.
+You cannot use break or continue.
+Use it when you just want to loop through all elements without stopping.
+
+for...of:
+Works with any iterable (like arrays and strings).
+You can use break and continue.
+Use it when you need more control over the loop.
+-----------------------------------------------------------------------------------------------------------
+2. What is hoisting and what is the Temporal Dead Zone (TDZ)? Explain with examples.
+
+Hoisting: declarations are moved to the top; var becomes undefined, functions are usable before their declaration.
+
+TDZ: accessing let or const before their declaration causes an error.
+
+
+hoisting ->
+let x=5;
+let y=5;
+sum(x,y)
+function sum(x,y){
+	console.log(x+y)
+	return x+y;
+} 
+// function can be invoked before the bode function
+
+TDZ->
+sum(5, 5); 
+// Error: Cannot access 'sum' before initialization
+
+let sum = (x, y) => {
+  console.log(x + y);
+  return x + y;
+};
+// let and const cannot be used before their declaration
+--------------------------------------------------------------------------------------
+3.What are the main differences between == and ===? 
+== compare values equality
+=== compare values and type equality
+
+let x={} 
+let y={}
+
+console.log(x==y) // false
+console.log(x==y)  // false 
+
+------------------------------------------------------------
+4.Explain how try-catch works and why it is important in async operations.
+
+Try-catch runs code in the try block and catches errors in the catch block to handle them without stopping the program. It is important in async operations to catch errors in async/await or API calls and prevent crashes.
+-------------------------------------------------------------
+5.What’s the difference between type conversion and coercion? Provide examples of each. 
+1. Type Conversion (Explicit)
+When you manually convert a value from one type to another.
+let num = 5;
+let str = String(num);
+console.log(str);
+console.log(typeof str); 
+
+2. Type Coercion (Implicit)
+
+When JavaScript automatically converts a value to another type during operations
+let num=5
+let num2="5"
+
+console.log(num+num2) // return 10 as a string
