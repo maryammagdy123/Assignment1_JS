@@ -4,7 +4,7 @@
  * 
  */
 
-const { use } = require("react");
+
 
 let srtNum = "123";
 let num = 7;
@@ -149,7 +149,7 @@ handleDivision(30)
 	}
  */
 let sqrNum = (num) => num ** 2;  // short hand arrow function
-console.log(sqrNum(2))
+console.log(sqrNum(5))
 // ------------------------------------------------------------------------------
 /**
  * 10.Write a function that destructure an object to extract values and returns a formatted string. (0.5 Grade)
@@ -157,8 +157,8 @@ console.log(sqrNum(2))
 • Output Example: 'John is 25 years old'
  */
 const person = { name: 'John', age: 25 }
+const { name, age } = person
 const formattedPerson = (person) => {
-	const { name, age } = person
 	return `${name} is ${age} years old`;
 }
 
